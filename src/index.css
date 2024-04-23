@@ -1,3 +1,194 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --global-color: #6c5fbc;
+  --blue-gray-300: #cbd5e1;
+  --main-black: #323142;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  text-align: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  /* margin-bottom: 10rem; */
+}
+
+h2 {
+  font-size: 3rem; /* Equivalent to text-5xl */
+  line-height: 1.2; /* Adjust line height based on your design */
+  font-weight: 900; /* Equivalent to font-black */
+  margin-bottom: 2.5rem; /* Equivalent to mb-10 */
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 3rem; /* Equivalent to lg:text-5xl */
+    color: var(--main-black);
+  }
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--main-black);
+}
+
+.hamburger-icon {
+  width: 30px;
+  height: 2px;
+  background-color: var(--main-black);
+  margin-bottom: 5px;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--main-black);
+}
+
+.hamburger-icon:before {
+  transform: translateY(-8px);
+}
+
+.hamburger-icon:after {
+  transform: translateY(8px);
+}
+
+.btn {
+  background-color: var(--global-color);
+  padding: 0.5rem 1.5rem;
+  color: white;
+  border-radius: 1em;
+}
+
+.ghost-btn {
+  border: 1px solid var(--global-color);
+  padding: 1rem 2rem;
+  color: var(--global-color);
+  border-radius: 1em;
+}
+
+/* HERO SECTION */
+.hero-section {
+  margin: 0 auto;
+}
+
+.hero-subtitle {
+  position: relative;
+  margin-left: 65px;
+}
+
+.hero-subtitle::before {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-120%);
+  content: "";
+  width: 50px;
+  height: 2px;
+  background-color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+/* FEATURED SECTION */
+.vertical-separator {
+  position: absolute;
+  right: 10%;
+  transform: translateY(-100%);
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+  /* margin: 0 10px; */
+}
+
+/* FEATURED ITEMS */
+.featured-items {
+  overflow: hidden;
+}
+
+.feature-border {
+  border-left: 1px solid var(--blue-gray-300);
+  border-right: 1px solid var(--blue-gray-300);
+}
+
+@media screen and (max-width: 768px) {
+  .feature-border {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--blue-gray-300);
+    border-bottom: 1px solid var(--blue-gray-300);
+  }
+
+  .feature-item {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.feature-l {
+  bottom: -50px;
+  left: -150px;
+  width: auto;
+  height: 400px;
+}
+
+.feature-r {
+  top: -100px;
+  right: -100px;
+  width: auto;
+  height: 400px;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+.list-disk {
+  /* list-style-type: disc !important; */
+}
+
+.arrow-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -100px;
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  background-image: url("./Images/ArrowFeature.svg"); /* Replace with your SVG path */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1; /* Adjust z-index as needed */
+}
+
+.mobile-feature::before {
+  content: "";
+  position: absolute;
+  left: 80%;
+  width: 50px;
+  height: 50px;
+  background-image: url("./Images/MobileFeature.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
