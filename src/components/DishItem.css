@@ -1,0 +1,11 @@
+.heart-icon {
+  transition: fill 0.3s ease; /* Smooth transition effect */
+}
+
+.heart-btn:hover .heart-icon {
+  fill: white;
+}
+
+.add-btn:hover {
+  background-color: white;
+}

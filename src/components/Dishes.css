@@ -1,0 +1,6 @@
+.dish-card {
+  transition: all 0.3s ease-in-out;
+}
+.dish-card:hover {
+  transform: scale(1.1);
+}

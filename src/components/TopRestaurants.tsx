@@ -1,5 +1,7 @@
 import React from "react";
 import RestaurantCard from "./RestaurantCard";
+import ViewAll from "./ViewAll";
+import "./RestaurantCard.css";
 
 const TopRestaurants: React.FC = () => {
   const topRestaurants: Restaurant[] = [
@@ -44,21 +46,17 @@ const TopRestaurants: React.FC = () => {
       <h2>
         Our Top <span className="text-global">Restaurants</span>
       </h2>
-      <div className="restaurants-list flex flex-col md:flex-row justify-center gap-7 mb-4">
+      <div className="restaurants-list flex flex-col md:flex-row justify-center gap-7">
         {topRestaurants.map((restaurant, index) => (
           <RestaurantCard
             key={index}
             restaurant={restaurant}
             tagColor={getTagColor(restaurant.tagName)}
-            className="flex flex-grow"
+            // className="restaurant-card flex flex-grow"
           />
         ))}
       </div>
-      <div className="view-all w-full relative">
-        <button className="absolute md:right-0 text-gray-400">
-          View all ➔
-        </button>
-      </div>
+      <ViewAll />
       <hr className="my-14" />
     </section>
   );

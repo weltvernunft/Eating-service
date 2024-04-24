@@ -1,0 +1,28 @@
+.review-slider-container {
+  position: relative;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: blue;
+}
+
+.slick-list {
+  /* margin: 0 15px; */
+}
+
+.slick-slide > div {
+  padding: 0 15px;
+}
+
+.testbox {
+  top: 0;
+}

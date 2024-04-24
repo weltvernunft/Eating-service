@@ -1,5 +1,7 @@
 import React from "react";
 import DishItem from "./DishItem";
+import ViewAll from "./ViewAll";
+import "./Dishes.css";
 
 const topDishes: Dish[] = [
   {
@@ -8,7 +10,7 @@ const topDishes: Dish[] = [
     imageUrl: "../src/Images/top-dishes/1.png",
     tagName: "Healthy",
     deliveryTime: 24,
-    cost: 12.99,
+    cost: 12,
   },
   {
     name: "Swe Dish",
@@ -16,7 +18,7 @@ const topDishes: Dish[] = [
     imageUrl: "../src/Images/top-dishes/2.png",
     tagName: "Trending",
     deliveryTime: 45,
-    cost: 11.99,
+    cost: 11,
   },
   {
     name: "Sweet Delight",
@@ -24,23 +26,23 @@ const topDishes: Dish[] = [
     imageUrl: "../src/Images/top-dishes/3.png",
     tagName: "Delicious",
     deliveryTime: 25,
-    cost: 19.99,
+    cost: 19,
   },
   {
     name: "Spicy Supreme",
     rating: 4.8,
-    imageUrl: "../src/Images/top-dishes/3.png",
+    imageUrl: "../src/Images/top-dishes/4.png",
     tagName: "Supreme",
     deliveryTime: 25,
-    cost: 19.99,
+    cost: 19,
   },
   {
     name: "Veggie Heaven",
     rating: 4.8,
-    imageUrl: "../src/Images/top-dishes/3.png",
+    imageUrl: "../src/Images/top-dishes/5.png",
     tagName: "Supreme",
     deliveryTime: 25,
-    cost: 19.99,
+    cost: 19,
   },
 ];
 
@@ -53,7 +55,7 @@ const getTagColor = (tagName: string) => {
     case "Supreme":
       return "bg-green-100 text-green-600"; // Green background with dark text
     case "Delicious":
-      return "bg-cyan-100 text-cyan-600"; // Green background with dark text
+      return "bg-cyan-100 text-cyan-600"; // Cyan background with dark text
     default:
       return "bg-gray-100 text-gray-600"; // Gray background with dark text
   }
@@ -62,26 +64,21 @@ const getTagColor = (tagName: string) => {
 const TopDishes: React.FC = () => {
   return (
     <section className="max-w-[1200px] mx-auto px-5">
-      <h2 className="text-3xl font-semibold mb-8">Top Dishes</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <h2 className="">
+        Our Top <span className="text-global">Dishes</span>
+      </h2>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
         {topDishes.map((dish, index) => (
-          <div
+          <li
             key={index}
-            className="bg-white rounded-xl shadow-md overflow-hidden"
+            className="dish-card bg-white rounded-3xl shadow-md hover:shadow-lg overflow-hidden"
           >
-            <DishItem
-              dish={dish}
-              key={index}
-              name={dish.name}
-              rating={dish.rating}
-              imageUrl={dish.imageUrl}
-              tagColor={getTagColor(dish.tagName)}
-              deliveryTime={dish.deliveryTime}
-              cost={dish.cost}
-            />
-          </div>
+            <DishItem dish={dish} tagColor={getTagColor(dish.tagName)} />
+          </li>
         ))}
-      </div>
+      </ul>
+      <ViewAll />
+      <hr className="my-14" />
     </section>
   );
 };

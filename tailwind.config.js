@@ -16,8 +16,9 @@ module.exports = {
         "main-black": "#323142",
       },
       screens: {
-        xs: "375px", // Add the xs screen size for 375px width
-        sm: "640px",
+        xs: "375px",
+        sm: "480px",
+        premd: "640px",
         md: "768px",
         lg: "1024px",
         xl: "1280px",

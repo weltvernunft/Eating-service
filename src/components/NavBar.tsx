@@ -10,12 +10,16 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ navItems }) => {
   return (
     <nav className="flex justify-between mt-1 border-b border-gray-300 pb-3 items-center mb-8 px-5">
-      <div className="flex gap-[100px] logo-items items-center w-[85px]">
-        <img src={logo} alt="logo" />
+      <div className="flex gap-[100px] logo-items items-center">
+        <a href="/" className="">
+          <img src={logo} alt="logo" className="w-[85px]" />
+        </a>
         <ul className="hidden md:flex gap-4 text-xg">
           {navItems.map((item, index) => (
-            <li>
-              <a href="/">{item}</a>
+            <li key={index}>
+              <a href="/" className="nav-item hover:text-gray-300">
+                {item}
+              </a>
             </li>
           ))}
         </ul>

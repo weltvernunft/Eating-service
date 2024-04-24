@@ -1,6 +1,7 @@
 import React from "react";
-import bookmark from "../Images/Bookmark.svg";
+import bookmark from "../Images/icons/Bookmark.svg";
 import star from "../Images/Star.svg";
+import "./RestaurantCard.css"
 
 interface RestaurantCardProps {
   restaurant: Restaurant;
@@ -20,7 +21,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
   tagColor,
 }) => {
   return (
-    <div className="card bg-white p-0 rounded-md flex-grow rounded-3xl overflow-hidden">
+    <div className="restaurant-card bg-white p-0 rounded-md flex-grow rounded-[1rem] overflow-hidden ">
       <div className="md:max-w-[400px] overflow-hidden relative">
         <img
           src={restaurant.imageUrl}
