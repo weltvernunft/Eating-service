@@ -102,7 +102,7 @@ h4 {
 }
 
 .ghost-btn:hover {
-  background-color: var(--global-color);
+  background-color: var(--global-color-shade);
   color: white;
 }
 
@@ -189,13 +189,14 @@ ul {
   position: absolute;
   top: 0;
   right: -100px;
-  width: 100px; /* Adjust width as needed */
-  height: 100px; /* Adjust height as needed */
-  background-image: url("./Images/ArrowFeature.svg"); /* Replace with your SVG path */
+  width: 100px;
+  height: 100px;
+  background-image: url("./Images/ArrowFeature.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 1; /* Adjust z-index as needed */
+  z-index: 1;
+  pointer-events: none;
 }
 
 .mobile-feature::before {

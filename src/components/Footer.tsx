@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         </a>
         <ul className="flex flex-col sm:flex-row gap-1 sm:gap-5 text-sm text-gray-500">
           {navItems.map((item, index) => (
-            <li key={index}>
+            <li key={index} className="hover:text-global-shade">
               <a href="/">{item}</a>
             </li>
           ))}

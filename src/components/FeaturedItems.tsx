@@ -26,7 +26,7 @@ const FeaturesList = () => {
             <div className="feature-num text-4xl text-center font-bold mb-2">
               {feature.num}
             </div>
-            <div className="feature-desc text-blue-gray-300 text-sm text-center">
+            <div className="feature-desc text-white opacity-65 text-sm text-center">
               {feature.desc}
             </div>
           </li>

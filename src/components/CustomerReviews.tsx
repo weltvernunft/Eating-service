@@ -83,7 +83,7 @@ const ReviewSlider: React.FC<ReviewSliderProps> = ({ reviews }) => {
                 </div>
               </div>
             )}
-            <p className="text-left text-gray-500 italic mb-2">"{review.content}"</p>
+            <p className="text-left text-gray-500 italic mb-5">"{review.content}"</p>
             <div className="rating flex gap-1">
               {Array.from({ length: review.rate }).map((_, index) => (
                 <img
