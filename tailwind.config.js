@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         global: "#6C5FBC",
         "global-bg": "#F9F9F9",
+        "global-shade": "#2b1b94",
         "blue-gray-300": "#CBD5E1",
         "main-black": "#323142",
       },

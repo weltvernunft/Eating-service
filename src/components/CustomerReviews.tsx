@@ -6,32 +6,32 @@ import "./ReviewSlider.css";
 import star from "../Images/icons/goldStar.svg";
 
 interface Review {
- reviewerName: string;
- rate: number;
- yearsWithUs: number;
- content: string;
- avatarUrl: string;
+  reviewerName: string;
+  rate: number;
+  yearsWithUs: number;
+  content: string;
+  avatarUrl: string;
 }
 
 interface ReviewSliderProps {
- reviews: Review[];
+  reviews: Review[];
 }
 
 const ReviewSlider: React.FC<ReviewSliderProps> = ({ reviews }) => {
- const [currentSlide, setCurrentSlide] = useState(0);
- const sliderRef = useRef<Slider>(null); // Create a reference to the Slider component
- const barRef = useRef<HTMLDivElement>(null);
- let barTranslate = 0;
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef<Slider>(null); // Create a reference to the Slider component
+  const barRef = useRef<HTMLDivElement>(null);
+  let barTranslate = 0;
 
- useEffect(() => {
+  useEffect(() => {
     if (barRef.current) {
       const currentBarWidth = barRef.current.offsetWidth;
       barTranslate = currentSlide * currentBarWidth;
       barRef.current.style.transform = `translateX(${barTranslate}px)`;
     }
- }, [currentSlide]);
+  }, [currentSlide]);
 
- const settings = {
+  const settings = {
     dots: false,
     infinite: true,
     speed: 500,
@@ -48,41 +48,49 @@ const ReviewSlider: React.FC<ReviewSliderProps> = ({ reviews }) => {
         },
       },
     ],
- };
+  };
 
- const handleSlideClick = (index: number) => {
+  const handleSlideClick = (index: number) => {
     if (sliderRef.current) {
       sliderRef.current.slickGoTo(index); // Navigate to the clicked slide
     }
- };
+  };
 
- return (
+  return (
     <section className="review-slider-container">
-      <h2><span className="text-global">Customers</span> Say</h2>
+      <h2>
+        <span className="text-global">Customers</span> Say
+      </h2>
       <Slider ref={sliderRef} {...settings} className="mb-5 md:mb-0">
         {reviews.map((review, index) => (
-          <div key={index} className="border p-5 outline-none rounded-lg" onClick={() => handleSlideClick(index)}>
+          <div
+            key={index}
+            className={`border p-5 outline-none rounded-lg ${
+              currentSlide === index && "md:min-h-[250px]"
+            }`}
+            onClick={() => handleSlideClick(index)}
+          >
             {currentSlide === index && (
               <div className="reviewer flex gap-4 items-center mb-5">
                 <img
-                 src={review.avatarUrl}
-                 alt={review.reviewerName}
-                 className="w-16 rounded-full"
+                  src={review.avatarUrl}
+                  alt={review.reviewerName}
+                  className="w-16 rounded-full"
                 />
                 <div className="reviever-info text-left">
-                 <h3>{review.reviewerName}</h3>
-                 <p>{review.yearsWithUs} years with us</p>
+                  <h3>{review.reviewerName}</h3>
+                  <p>{review.yearsWithUs} years with us</p>
                 </div>
               </div>
             )}
-            <p className="text-left italic mb-2">"{review.content}"</p>
+            <p className="text-left text-gray-500 italic mb-2">"{review.content}"</p>
             <div className="rating flex gap-1">
               {Array.from({ length: review.rate }).map((_, index) => (
                 <img
-                 key={index}
-                 src={star}
-                 alt="Star"
-                 className="w-3 h-3 inline-block"
+                  key={index}
+                  src={star}
+                  alt="Star"
+                  className="w-3 h-3 inline-block"
                 />
               ))}
             </div>
@@ -98,7 +106,7 @@ const ReviewSlider: React.FC<ReviewSliderProps> = ({ reviews }) => {
       </div>
       <hr className="my-14" />
     </section>
- );
+  );
 };
 
 export default ReviewSlider;

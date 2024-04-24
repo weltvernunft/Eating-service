@@ -10,9 +10,11 @@ const navItems = ["Blog", "Pricing", "About Us", "Contact"];
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-200 p-4 bg-gray-200">
+    <footer className="bg-gray-100 p-4">
       <nav className="flex flex-col sm:flex-row justify-between sm:items-center">
-        <img src={logo} alt="logo" className="mb-5 sm:mb-0 w-24"/>
+        <a href="/">
+          <img src={logo} alt="logo" className="mb-5 sm:mb-0 w-24" />
+        </a>
         <ul className="flex flex-col sm:flex-row gap-1 sm:gap-5 text-sm text-gray-500">
           {navItems.map((item, index) => (
             <li key={index}>
@@ -24,7 +26,7 @@ const Footer: React.FC = () => {
       <hr className="my-8 border-gray-400" />
       <div className="flex flex-col sm:flex-row gap-5 mx-auto text-center justify-between">
         <p className="text-sm text-gray-500">
-          © 2023 EATLY All Rights Reserved.
+          © 2024 EATLY All Rights Reserved.
         </p>
 
         <SocialIcons />

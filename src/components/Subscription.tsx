@@ -12,7 +12,7 @@ const Subscription: React.FC = () => {
           placeholder="Enter email address"
           className="px-3 py-5 w-full premd:w-96 rounded-xl opacity-80"
         />
-        <button className="subscribe-btn rounded-lg bg-global text-white px-6 py-2 top-3 bottom-3 absolute right-3 premd:right-auto premd:left-[15rem] uppercase">
+        <button className="subscribe-btn rounded-lg bg-global text-white px-6 py-2 top-3 bottom-3 absolute right-3 premd:right-auto premd:left-[15rem] uppercase | hover:bg-global-shade | transition-all">
           Subscribe
         </button>
       </div>
