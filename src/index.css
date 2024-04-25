@@ -17,6 +17,10 @@ body {
   box-sizing: border-box;
 }
 
+input {
+  outline: none;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -62,6 +66,7 @@ h4 {
   height: 2px;
   background-color: var(--main-black);
   margin-bottom: 5px;
+  transition: all 100ms ease-in-out;
 }
 
 .hamburger-icon:before,
@@ -71,6 +76,7 @@ h4 {
   width: 30px;
   height: 2px;
   background-color: var(--main-black);
+  transition: all 100ms ease-in-out;
 }
 
 .hamburger-icon:before {
@@ -81,12 +87,36 @@ h4 {
   transform: translateY(8px);
 }
 
+/* HAMBURGER CROSS */
+.hamburger-icon.cross {
+  background-color: transparent;
+}
+
+.hamburger-icon.cross:before,
+.hamburger-icon.cross:after {
+  background-color: var(--main-black);
+}
+
+.hamburger-icon.cross:before {
+  transform: rotate(45deg) translate(2px, 1px);
+}
+
+.hamburger-icon.cross:after {
+  transform: rotate(-45deg);
+}
+
+/* ############### */
+
+button {
+  outline: none;
+}
+
 .btn {
   background-color: var(--global-color);
   padding: 0.5rem 1.5rem;
   color: white;
-  border-radius: .7em;
-  transition: all 0.2s ease-in-out;
+  border-radius: 0.7em;
+  transition: all 0.1s ease-in-out;
 }
 
 .btn:hover {
@@ -97,7 +127,7 @@ h4 {
   border: 1px solid var(--global-color);
   padding: 1rem 2rem;
   color: var(--global-color);
-  border-radius: .7em;
+  border-radius: 0.7em;
   transition: all 0.3s ease;
 }
 
@@ -211,5 +241,3 @@ ul {
   background-repeat: no-repeat;
   z-index: -1;
 }
-
-

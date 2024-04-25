@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 10;
+    padding: 1rem 2rem;
+  }
+
+  .nav-bar li {
+    margin-bottom: .5rem;
+}
+}

@@ -7,6 +7,7 @@ import googleIcon from "../Images/icons/google-icon.svg";
 import appleIcon from "../Images/icons/apple-icon.svg";
 import mailIcon from "../Images/icons/mail-icon.svg";
 import lockIcon from "../Images/icons/lock-icon.svg";
+import userIcon from "../Images/icons/user-icon.svg";
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -30,24 +31,33 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
           </a>
         </div>
         <div className="auth-form flex flex-col gap-2">
-          <h3>Sign in to Eatly</h3>
+          <h3>Sign Up to Eatly</h3>
           <div className="flex flex-col premd:flex-row gap-3 w-full">
             <a
               href="#"
-              className="flex-1 flex justify-center items-center space-x-2 p-2 bg-gray-100 rounded-md"
+              className="flex-1 flex justify-center items-center space-x-2 p-2 bg-gray-100 rounded-md | hover:bg-global transition-all"
             >
               <img src={googleIcon} alt="Google" className="w-5 h-5" />
             </a>
-            {/* Apple Sign-In Link with Icon */}
             <a
               href="#"
-              className="flex-1 flex justify-center items-center space-x-2 p-2 bg-gray-100 rounded-md"
+              className="flex-1 flex justify-center items-center space-x-2 p-2 bg-gray-100 rounded-md | hover:bg-global transition-all"
             >
               <img src={appleIcon} alt="Apple" className="w-5 h-5" />
             </a>
           </div>
           <span className="text-gray-400">OR</span>
-          <form className="">
+          <form className="" >
+            <div className="input-group">
+              <img src={userIcon} alt="Username" className="input-icon" />
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+                className="bg-gray-100"
+              />
+            </div>
             <div className="input-group">
               <img src={mailIcon} alt="Mail" className="input-icon" />
               <input
@@ -58,7 +68,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
                 className="bg-gray-100"
               />
             </div>
-            <div className="input-group mb-1">
+            <div className="input-group">
               <img src={lockIcon} alt="Lock" className="input-icon" />
               <input
                 type="password"
@@ -68,25 +78,13 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
                 className="bg-gray-100"
               />
             </div>
-            <div className="flex justify-end mb-3">
-              <a href="#" className="flex-end text-sm text-global">
-                Forgot password?
-              </a>
-            </div>
-            <div>
-              <button
-                type="submit"
-                className="text-white bg-global py-3 rounded-lg w-full"
-              >
-                Sign in
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="text-white bg-global py-3 rounded-lg w-full | hover:bg-global-shade transition-all"
+            >
+              Sign Up
+            </button>
           </form>
-          <div className="flex gap-1 justify-center">
-            <p className="text-gray-700">Or create a new account</p>
-            {/* Placeholder for Create New Account button */}
-            <button className="text-global font-bold">Sign Up</button>
-          </div>
         </div>
         <div className="modal-links w-full flex justify-between text-xs text-gray-400">
           <a href="/">Privacy Policy</a>

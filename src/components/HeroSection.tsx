@@ -1,7 +1,17 @@
 import React from "react";
 import heroImage from "../Images/Hero.png";
+import graphImage from "../Images/Graph.png";
 import trustpilot from "../Images/trustpilot.svg";
 import star from "../Images/Star.svg";
+import OrderItem from "./controlPurchases/OrderItem";
+import "./HeroSection.css";
+
+const dish = {
+  imageUrl: "../src/Images/top-dishes/1.png",
+  title: "Spaghetti Carbonara",
+  status: "Delivered",
+  time: "12:30 PM",
+};
 
 const HeroSection: React.FC = () => {
   return (
@@ -30,8 +40,25 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="md:w-1/2">
-        <img src={heroImage} alt="Hero Image" className="w-full" />
+      <div className="hero-right md:w-1/2 flex justify-center relative">
+        <div className="hero-right__container absolute right-1 w-2/3 min-w-[300px]">
+          <OrderItem
+            dish={dish}
+            getStatusColor={() => {
+              return "text-green-600";
+            }}
+          />
+        </div>
+        <img
+          src={heroImage}
+          alt="Hero Image"
+          className=" hero-dish w-full max-w-96 "
+        />
+        <img
+          src={graphImage}
+          alt="graph Image"
+          className="hero-graph w-full max-w-56 absolute -bottom-10 left-0 "
+        />
       </div>
     </section>
   );
