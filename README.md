@@ -1,4 +1,4 @@
-# Eatly Project
+# Eatly Project 🍔🥗
 
 ## Description
 Eatly is a web application for ordering food. The main page provides users with an overview of available dishes and services, as well as allows them to check prices. Additionally, users can explore various news and provide feedback on the website.
@@ -13,10 +13,10 @@ The main goal of this project is to practice the following skills:
 
 ## Expected Results
 1. **Homepage**: Contains cards of dishes.
-2. **Authorization screen**: Provides fields for entering data.
+2. **Authorization screen**: Provides modals for entering data.
 
 
-## Technologies used 
+## Technologies used 🛠️
 - **Technology stack**: React/Vue, TS, Tailwind
 - **Semantic markup**: Using appropriate HTML tags and attributes.
 - **Responsive design**: xs: 375px, sm: 480px, md: 768px, lg: 1024px
@@ -30,7 +30,7 @@ The main goal of this project is to practice the following skills:
 
 **Node Version Used:** 20.12.0
 
-## Launch Project
+## Launch Project 🚀
 To launch the project, run the following command:
 - Open terminal
 - Paste these lines:
