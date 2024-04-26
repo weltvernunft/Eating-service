@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => {
         <p className="hero-subtitle uppercase tracking-wider font-semibold text-gray-400 mb-5">
           over 1000 users
         </p>
-        <h1 className=" text-5xl lg:text-6xl font-black mb-8">
+        <h1 className=" text-5xl lg:text-6xl mb-8">
           Enjoy Foods All Over The <span className="text-global">World</span>
         </h1>
         <p className="text-gray-400 mb-8">

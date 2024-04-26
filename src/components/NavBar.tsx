@@ -54,7 +54,7 @@ const NavBar: React.FC<NavBarProps> = ({ navItems }) => {
 
   return (
     <>
-      <nav className="flex justify-between mt-1 border-b border-gray-300 pb-3 items-center mb-8 px-5">
+      <nav className="flex justify-between border-b border-gray-300 py-3 items-center mb-8 px-5">
         <div className="flex gap-[100px] logo-items items-center">
           <a href="/" className="">
             <img src={logo} alt="logo" className="w-[85px]" />
