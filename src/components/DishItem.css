@@ -1,5 +1,12 @@
+:root {
+  --global-color: #6c5fbc;
+  --global-color-shade: #2b1b94;
+  --blue-gray-300: #cbd5e1;
+  --main-black: #323142;
+}
+
 .heart-icon {
-  transition: fill 0.3s ease; /* Smooth transition effect */
+  transition: fill 0.3s ease;
 }
 
 .heart-btn:hover .heart-icon {
@@ -8,4 +15,12 @@
 
 .add-btn:hover {
   background-color: white;
+}
+
+.heart-btn:hover svg path {
+  fill: rgb(255, 0, 81);
+}
+
+.add-btn:hover svg rect {
+  fill: var(--global-color-shade);
 }
