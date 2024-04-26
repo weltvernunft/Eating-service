@@ -37,4 +37,4 @@ To launch the project, run the following command:
 ```js
 npm i
 npm run dev
-```js
+```
